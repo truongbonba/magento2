@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="header.panel" remove="true" />
+        <referenceBlock name="search-term-popular-link" remove="true" />
+        <referenceBlock name="footer_links" remove="true" />
+
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">220</argument>
+                <argument name="logo_img_height" xsi:type="number">28</argument>
+            </arguments>
+        </referenceBlock>
+
+        <container name="header.panel.content">
+            <block class="Magento\Framework\View\Element\Template" name="top.contact" template="Magento_Theme::html/top_contact.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="top.welcome" template="Magento_Theme::html/top_welcome.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="top.action" template="Magento_Theme::html/top_action.phtml" />
+        </container>
+        <move element="header.panel.content" destination="header.panel.wrapper" before="-" />
+
+        <move element="minicart" destination="header.panel.content" after="-" />
+
+        <referenceContainer name="footer">
+            <block class="Magento\Framework\View\Element\Template" name="footer_site" template="Magento_Theme::html/footer_site.phtml" />
+        </referenceContainer>
+
+    </body>
+</page>
