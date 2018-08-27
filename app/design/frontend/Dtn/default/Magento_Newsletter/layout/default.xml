@@ -11,7 +11,11 @@
             <block class="Magento\Framework\View\Element\Js\Components" name="newsletter_head_components" template="Magento_Newsletter::js/components.phtml"/>
         </referenceBlock>
         <referenceContainer name="footer">
-            <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" as="subscribe" after="-" template="Magento_Newsletter::subscribe.phtml"/>
+            <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" as="subscribe" after="-" template="Magento_Newsletter::subscribe.phtml">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">footer-site</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
